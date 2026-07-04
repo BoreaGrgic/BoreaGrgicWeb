@@ -1,9 +1,8 @@
-/* --- VRIJEDNOSTI I BOJE (Tamno-sjajna modra i SVJETLIJE prirodno drvo) --- */
+/* --- VRIJEDNOSTI I BOJE (Izvorni kod s crnim tekstom) --- */
 :root {
     --primary-blue: #001a33;    /* Duboka, sjajna modra */
-    --wood-medium-dark: #ded0bc; /* VRUĆE: Savršena svjetlija nijansa prirodnog hrasta */
     --accent-gold: #c5a059;     /* Elegantna zlatna */
-    --text-dark: #ffffff;       /* Tekst prebačen u svijetli jer je drvo opet tamnije */
+    --text-dark: #000000;       /* Gurnuto u čistu crnu boju za glavna slova */
     --text-light: #ffffff;
     --transition: all 0.3s ease;
     --shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
@@ -13,17 +12,14 @@
 
 body {
     font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
-    color: var(--text-dark);
+    color: var(--text-dark); /* Crna slova */
     line-height: 1.6;
     
-    /* DRVENA PODLOGA (Vraćena u svjetliji ton) */
-    background-color: var(--wood-medium-dark);
+    /* DRVENA PODLOGA - IZVORNI .PNG BEZ IKAKVOG BOJANJA */
     background-image: url('../assets/wood_pattern.png');
     background-repeat: repeat;
     background-position: center;
-    
-    /* Promijenjeno u multiply za suptilno stapanje godova na svjetlijoj podlozi */
-    background-blend-mode: multiply; 
+    /* background-color i background-blend-mode su potpuno uklonjeni da se vidi čisti, izvorni png */
 }
 
 a { text-decoration: none; color: inherit; transition: var(--transition); }
@@ -71,39 +67,10 @@ nav {
 
 .nav-links { display: flex; align-items: center; gap: 30px; }
 .nav-links > li { position: relative; padding: 15px 0; }
-.nav-links a { font-size: 0.95rem; font-weight: 600; letter-spacing: 1px; }
+.nav-links a { font-size: 0.95rem; font-weight: 600; letter-spacing: 1px; color: var(--text-light); } /* Tekst u navu ostaje svijetao zbog tamne trake */
 .nav-links a:hover, .nav-links li:hover > a { color: var(--accent-gold); }
 
 /* Dropdown izbornik */
 .dropdown-menu {
     position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%) translateY(10px);
-    background: #001122;
-    min-width: 200px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.5);
-    border-radius: 6px;
-    padding: 10px 0;
-    opacity: 0;
-    visibility: hidden;
-    transition: var(--transition);
-    border-top: 3px solid var(--accent-gold);
-}
-
-.dropdown-menu li a { padding: 10px 20px; display: block; font-size: 0.85rem; color: rgba(255, 255, 255, 0.9); }
-.dropdown-menu li a:hover { background: rgba(197, 160, 89, 0.2); color: var(--accent-gold); }
-.nav-links li:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
-
-/* Mobilni hamburger */
-.menu-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
-.menu-toggle span { width: 25px; height: 3px; background-color: var(--text-light); transition: var(--transition); }
-
-/* --- STRUKTURA SADRŽAJA (Zatamnjene kartice za bolji kontrast na tamnijem drvu) --- */
-main { max-width: 1200px; margin: 180px auto 60px auto; padding: 0 20px; min-height: 70vh; }
-.page-header { text-align: center; margin-bottom: 50px; }
-.page-header h1 { font-size: 2.8rem; color: var(--text-light); margin-bottom: 10px; font-weight: 700; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
-.page-header h2 { font-size: 1.2rem; color: var(--accent-gold); font-weight: 600; letter-spacing: 1px; }
-
-.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
-.card { background: rgba(0, 0, 0, 0.45); backdrop-filter: blur(4px); padding: 30px; border-radius: 8px; box-shadow: var(--shadow); border-top: 4px solid var(--accent-gold); border
+    top:
