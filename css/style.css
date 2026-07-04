@@ -1,7 +1,7 @@
-/* --- VRIJEDNOSTI I BOJE (Zadržavamo pogođenu podlogu drva i tamno-sjajnu plavu) --- */
+/* --- VRIJEDNOSTI I BOJE --- */
 :root {
     --primary-blue: #001a33;    /* Duboka, sjajna modra */
-    --wood-perfect: #ded0bc;    /* Tvoja pogođena nijansa prirodnog hrasta */
+    --wood-perfect: #ded0bc;    /* Savršena nijansa prirodnog hrasta */
     --accent-gold: #c5a059;     /* Elegantna zlatna */
     --text-dark: #2b2520;       /* Tamni tekst za sadržaj */
     --text-light: #ffffff;      /* Čisti bijeli tekst za navigaciju */
@@ -15,8 +15,6 @@ body {
     font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
     color: var(--text-dark);
     line-height: 1.6;
-    
-    /* DRVENA PODLOGA (Uzorak koji ti se sviđa) */
     background-color: var(--wood-perfect);
     background-image: url('../assets/wood_pattern.png');
     background-repeat: repeat;
@@ -28,20 +26,25 @@ a { text-decoration: none; color: inherit; transition: var(--transition); }
 ul { list-style: none; }
 img { max-width: 100%; display: block; }
 
-/* --- RESTRUKTURIRANA I STABILNA NAVIGACIJSKA TRAKA --- */
+/* --- 1. ZAKUCANA NAVIGACIJSKA TRAKA (FIKSNA VISINA) --- */
 header {
     position: fixed;
     top: 0;
     width: 100%;
-    height: 90px; /* Fiksna visina sprječava gužvanje i preklapanje */
+    
+    /* Eksplicitno definirana visina koja se NE SMIJE mijenjati */
+    height: 90px !important; 
+    max-height: 90px !important;
+    min-height: 90px !important;
+    
     z-index: 1000;
     background-color: var(--primary-blue);
     
-    /* Valovi iz logotipa u pozadini - pomaknuti skroz bočno da ne smetaju tekstu */
+    /* Slike valova u pozadini, odmaknute od sredine da ne gužvaju elemente */
     background-image: url('../assets/wave_top.png'), url('../assets/wave_bottom.png');
     background-position: left center, right center;
     background-repeat: no-repeat, no-repeat;
-    background-size: auto 100%; /* Valovi prate visinu trake */
+    background-size: auto 100%;
     
     border-bottom: 2px solid var(--accent-gold);
     box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
@@ -49,7 +52,7 @@ header {
 
 nav {
     max-width: 1400px;
-    height: 100%;
+    height: 100% !important; /* Prisiljava nav da striktno prati visinu od 90px */
     margin: 0 auto;
     padding: 0 30px;
     display: flex;
@@ -57,33 +60,39 @@ nav {
     align-items: center;
 }
 
-/* Pozicioniranje Logotipa */
+/* --- 2. LOGO POD KONTROLOM (Nema više bježanja) --- */
 .logo {
     display: flex;
     align-items: center;
-    height: 100%;
+    justify-content: center;
+    height: 100%; /* Koristi punu visinu od 90px */
 }
 
 .logo img { 
-    height: 70px; /* Smanjeno na optimalnu visinu da ne rasteže cijeli meni */
-    width: auto;
+    /* Strogo kontrolirana visina logotipa s marginama unutar trake */
+    height: 70px !important; 
+    width: auto !important;
     border-radius: 4px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    
+    /* Preventiva protiv rastezanja ili bježanja izvan 90px okvira */
+    max-height: 70px !important; 
+    object-fit: contain; 
 }
 
-/* Glavni linkovi - fiksirani u jedan red bez zamatanja teksta */
+/* --- 3. GLAVNI LINKOVI PORAVNATI U JEDNOJ LINIJI --- */
 .nav-links { 
     display: flex; 
     align-items: center; 
     gap: 35px; 
-    height: 100%;
+    height: 100% !important;
 }
 
 .nav-links > li { 
     position: relative; 
     display: flex;
     align-items: center;
-    height: 100%; /* Omogućuje prirodan hover prostor */
+    height: 100% !important; 
 }
 
 .nav-links a { 
@@ -91,7 +100,7 @@ nav {
     font-weight: 600; 
     letter-spacing: 1px; 
     color: var(--text-light);
-    white-space: nowrap; /* Sprječava skakanje teksta u novi red */
+    white-space: nowrap; 
     padding: 10px 0;
 }
 
@@ -100,10 +109,10 @@ nav {
     color: var(--accent-gold); 
 }
 
-/* --- POTPUNO REFORMIRANI DROPDOWN IZBORNIK --- */
+/* --- DROPDOWN IZBORNIK SE VEŽE NA PROREZ OD 90px --- */
 .dropdown-menu {
     position: absolute;
-    top: 90px; /* Savršeno se poravnava s dnom headera */
+    top: 90px; /* Točno sjeda na donji rub fiksne trake */
     left: 50%;
     transform: translateX(-50%) translateY(10px);
     background: #001122;
@@ -132,31 +141,19 @@ nav {
 .dropdown-menu li a:hover { 
     background: rgba(197, 160, 89, 0.15); 
     color: var(--accent-gold); 
-    padding-left: 25px; /* Elegantni mali pomak na hoveru */
+    padding-left: 25px; 
 }
 
-/* Prikaz dropdowna na hover bez trzanja */
 .nav-links li:hover .dropdown-menu { 
     opacity: 1; 
     visibility: visible; 
     transform: translateX(-50%) translateY(0); 
 }
 
-/* Mobilni hamburger gumb */
+/* Hamburger gumb */
 .menu-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
 .menu-toggle span { width: 25px; height: 3px; background-color: var(--text-light); transition: var(--transition); }
 
-/* --- STRUKTURA SADRŽAJA --- */
-main { max-width: 1200px; margin: 150px auto 60px auto; padding: 0 20px; min-height: 75vh; }
-.page-header { text-align: center; margin-bottom: 50px; }
-.page-header h1 { font-size: 2.8rem; color: var(--primary-blue); margin-bottom: 10px; font-weight: 700; }
-.page-header h2 { font-size: 1.2rem; color: var(--accent-gold); font-weight: 600; letter-spacing: 1px; }
-
-/* Kartice */
-.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
-.card { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(6px); padding: 30px; border-radius: 8px; box-shadow: var(--shadow); border-top: 4px solid var(--primary-blue); border-left: 1px solid rgba(255,255,255,0.6); }
-.card h3 { color: var(--primary-blue); margin-bottom: 15px; }
-.card p { color: #443c35; }
-
-/* Software Stranica Layout */
-.software-layout { display: grid;
+/* --- SADRŽAJ (Gurnut točno ispod zakucane trake) --- */
+main { 
+    max-width: 1200px;
