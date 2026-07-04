@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="hr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +7,11 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- KOPIRANI HEADER -->
+    
+    <!-- HEADER -->
     <header>
         <nav>
-            <a href="index.html" class="logo"><img src="assets/logo.png" alt="Logo"></a>
+            <a href="index.html" class="logo"><img src="assets/Borea_jpeg.jpeg" alt="Borea Grgić Logo"></a>
             <div class="menu-toggle" id="mobile-menu-toggle"><span></span><span></span><span></span></div>
             <ul class="nav-links" id="nav-links-menu">
                 <li><a href="index.html">HOME</a></li>
@@ -35,38 +36,50 @@
     <main>
         <div class="page-header">
             <h1>CNC Software Solutions</h1>
-            <h2>Optimizacija i automatizacija strojnih procesa</h2>
+            <h2>Striving for machine process optimization and automation</h2>
         </div>
 
         <div class="software-layout">
+            <!-- LEFT: Gallery -->
             <div class="gallery-holder">
-                <div class="main-view"><span>[ Sučelje u radu (screen1.png) ]</span></div>
+                <div class="main-view"><span>[ Software Interface (screen1.png) ]</span></div>
                 <div class="thumbs-holder">
                     <div class="thumb-box">[ Setup ]</div>
-                    <div class="thumb-box">[ Dijagram ]</div>
-                    <div class="thumb-box">[ Makro ]</div>
+                    <div class="thumb-box">[ Diagram ]</div>
+                    <div class="thumb-box">[ Macro ]</div>
                 </div>
             </div>
 
+            <!-- RIGHT: Checkout & Details -->
             <div>
-                <span style="font-size: 0.8rem; background: #eee; padding: 4px 10px; border-radius:4px; font-weight:700;">PROBEXYZ.DLL</span>
+                <span style="font-size: 0.8rem; background: var(--bg-alt); padding: 4px 10px; border-radius:4px; font-weight:700;">PROBEXYZ.DLL PLUGIN</span>
                 <p style="margin: 20px 0; text-align: justify;">
-                    Originalni plugin za UCCNC okruženje koji automatizira pronalaženje nulte točke po X, Y i Z osi. Povećava preciznost i sprječava mehaničko oštećenje sonde.
+                    An original, high-performance plugin tailored for the UCCNC environment. Developed specifically to automate the 3D probing sequence and automatically zero your X, Y, and Z axes simultaneously.
                 </p>
                 
+                <h4 style="margin-bottom: 10px; color: var(--wood-brown);">Key Features:</h4>
+                <ul style="margin-bottom: 30px; padding-left: 20px; list-style-type: square;">
+                    <li style="margin-bottom: 5px;">Fast and highly reliable 3D probing routine (X, Y, Z).</li>
+                    <li style="margin-bottom: 5px;">Smart probe crash protection algorithms.</li>
+                    <li style="margin-bottom: 5px;">Seamless mapping to custom macros and hardware buttons.</li>
+                </ul>
+
                 <div class="checkout-card">
-                    <h3>Licenca & Download</h3>
-                    <div class="price-tag">39.00 EUR <span style="font-size: 1rem; color: #777; font-weight: 400;">+ PDV</span></div>
+                    <h3>License & Download</h3>
+                    <div class="price-tag">39.00 EUR <span style="font-size: 1rem; color: #aaa; font-weight: 400;">+ VAT</span></div>
                     <div class="btn-stack">
-                        <button class="btn btn-solid" onclick="otvoriPaddleSustav()">Kupi licencu (Paddle)</button>
-                        <a href="assets/download/ProbeXYZ.zip" class="btn btn-outline" download>Preuzmi verziju (.ZIP)</a>
+                        <button class="btn btn-solid" onclick="otvoriPaddleSustav()">Buy License (Paddle)</button>
+                        <a href="assets/download/ProbeXYZ.zip" class="btn btn-outline" download>Download Demo (.ZIP)</a>
                     </div>
                 </div>
             </div>
         </div>
     </main>
 
-    <footer><p>&copy; 2026 BOREA GRGIĆ. Sva prava pridržana.</p></footer>
+    <footer>
+        <p>&copy; 2026 BOREA GRGIĆ. All rights reserved.</p>
+    </footer>
+
     <script src="js/main.js"></script>
 </body>
 </html>
