@@ -1,9 +1,10 @@
-/* --- VRIJEDNOSTI I BOJE (Izvorni kod s crnim tekstom) --- */
+/* --- VRIJEDNOSTI I BOJE (Potpuna kontrola nad izolacijom teksta) --- */
 :root {
     --primary-blue: #001a33;    /* Duboka, sjajna modra */
+    --wood-medium-dark: #3a2211; /* Zadržana varijabla radi kompatibilnosti, ali se ne koristi za podlogu */
     --accent-gold: #c5a059;     /* Elegantna zlatna */
-    --text-dark: #000000;       /* Glavna slova u čistu crnu */
-    --text-light: #ffffff;
+    --text-dark: #000000;       /* Glavna slova na stranici su sada CRNA */
+    --text-light: #ffffff;      /* Svijetli tekst za elemente na plavoj podlozi */
     --transition: all 0.3s ease;
     --shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
@@ -12,10 +13,10 @@
 
 body {
     font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
-    color: var(--text-dark); /* Crna slova */
+    color: var(--text-dark); /* Crna slova na razini cijelog body-a */
     line-height: 1.6;
     
-    /* DRVENA PODLOGA - IZVORNI .PNG BEZ IKAKVOG BOJANJA */
+    /* DRVENA PODLOGA (Izvorni .png bez ikakvog dodatnog bojanja ili stapanja) */
     background-image: url('../assets/wood_pattern.png');
     background-repeat: repeat;
     background-position: center;
@@ -64,12 +65,13 @@ nav {
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
+/* Izolirani linkovi unutar navigacije kako se ne bi miješali s crnim slovima body-ja */
 .nav-links { display: flex; align-items: center; gap: 30px; }
 .nav-links > li { position: relative; padding: 15px 0; }
-.nav-links a { font-size: 0.95rem; font-weight: 600; letter-spacing: 1px; color: var(--text-light); } /* Tekst u navu ostaje svijetao zbog tamne trake */
-.nav-links a:hover, .nav-links li:hover > a { color: var(--accent-gold); }
+.nav-links a { font-size: 0.95rem; font-weight: 600; letter-spacing: 1px; color: var(--text-light) !important; }
+.nav-links a:hover, .nav-links li:hover > a { color: var(--accent-gold) !important; }
 
-/* Dropdown izbornik - VRAĆENA ORIGINALNA KLASA I POZICIONIRANJE */
+/* Dropdown izbornik - NETAKNUTA ORIGINALNA STRUKTURA I POZICIJA */
 .dropdown-menu {
     position: absolute;
     top: 100%;
@@ -78,4 +80,64 @@ nav {
     background: #001122;
     min-width: 200px;
     box-shadow: 0 8px 30px rgba(0,0,0,0.5);
-    border-radius:
+    border-radius: 6px;
+    padding: 10px 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+    border-top: 3px solid var(--accent-gold);
+}
+
+.dropdown-menu li a { padding: 10px 20px; display: block; font-size: 0.85rem; color: rgba(255, 255, 255, 0.9) !important; }
+.dropdown-menu li a:hover { background: rgba(197, 160, 89, 0.2); color: var(--accent-gold) !important; }
+.nav-links li:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+
+/* Mobilni hamburger */
+.menu-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+.menu-toggle span { width: 25px; height: 3px; background-color: var(--text-light); transition: var(--transition); }
+
+/* --- STRUKTURA SADRŽAJA --- */
+main { max-width: 1200px; margin: 180px auto 60px auto; padding: 0 20px; min-height: 70vh; }
+.page-header { text-align: center; margin-bottom: 50px; }
+.page-header h1 { font-size: 2.8rem; color: var(--primary-blue); margin-bottom: 10px; font-weight: 700; text-shadow: none; } /* Prebačeno u plavu radi čitljivosti na čistom drvu */
+.page-header h2 { font-size: 1.2rem; color: var(--accent-gold); font-weight: 600; letter-spacing: 1px; }
+
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
+.card { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(4px); padding: 30px; border-radius: 8px; box-shadow: var(--shadow); border-top: 4px solid var(--accent-gold); border-left: 1px solid rgba(0,0,0,0.05); }
+.card h3 { color: var(--accent-gold); margin-bottom: 15px; }
+.card p { color: var(--text-dark); } /* Osiguran crni tekst u karticama */
+
+/* Software Stranica Layout */
+.software-layout { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 50px; align-items: start; }
+.main-view { background: rgba(255, 255, 255, 0.7); aspect-ratio: 16/10; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--text-dark); border: 1px dashed var(--accent-gold); }
+.thumbs-holder { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 15px; }
+.thumb-box { background: rgba(255, 255, 255, 0.7); aspect-ratio: 16/10; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; color: var(--text-dark); }
+
+.checkout-card { background: linear-gradient(180deg, #00264d 0%, #001122 100%); color: var(--text-light); padding: 40px; border-radius: 8px; border-top: 4px solid var(--accent-gold); box-shadow: 0 10px 30px rgba(0,0,0,0.3); margin-top: 25px; border: 1px solid rgba(255,255,255,0.1); }
+.checkout-card h3 { color: var(--text-light); }
+.price-tag { font-size: 2.5rem; font-weight: 700; color: var(--accent-gold); margin: 15px 0; }
+.btn-stack { display: flex; flex-direction: column; gap: 15px; }
+
+/* Gumbi */
+.btn { display: inline-block; padding: 12px 30px; border-radius: 4px; font-weight: 700; text-transform: uppercase; font-size: 0.85rem; text-align: center; cursor: pointer; border: 2px solid transparent; }
+.btn-solid { background: var(--accent-gold); color: #000; }
+.btn-solid:hover { background: #ffe07d; }
+.btn-outline { background: transparent; color: var(--text-light); border-color: var(--text-light); }
+.btn-outline:hover { background: var(--text-light); color: var(--primary-blue); }
+.btn-hero { border-color: var(--accent-gold); color: var(--accent-gold); border-radius: 30px; margin-top: 20px; }
+.btn-hero:hover { background: var(--accent-gold); color: #000; }
+
+footer { background: #000b14; color: rgba(255, 255, 255, 0.4); padding: 40px 20px; text-align: center; font-size: 0.9rem; border-top: 4px solid var(--accent-gold); }
+
+/* Responzivnost */
+@media (max-width: 768px) {
+    .menu-toggle { display: flex; }
+    .nav-links { position: absolute; top: 100%; left: 0; right: 0; background: #001122; flex-direction: column; gap: 0; width: 100%; max-height: 0; overflow: hidden; transition: var(--transition); }
+    .nav-links.active { max-height: 450px; }
+    .nav-links > li { width: 100%; text-align: center; padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .dropdown-menu { position: static; transform: none; opacity: 1; visibility: visible; background: rgba(0, 0, 0, 0.2); display: none; }
+    .nav-links li:hover .dropdown-menu { display: block; }
+    .software-layout { grid-template-columns: 1fr; }
+    .logo img { height: 75px; }
+    main { margin-top: 130px; }
+}
