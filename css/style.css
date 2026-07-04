@@ -1,7 +1,7 @@
-/* --- VRIJEDNOSTI I BOJE (Tamno-sjajna modra i umjereno tamno drvo) --- */
+/* --- VRIJEDNOSTI I BOJE (Tamno-sjajna modra i SVJETLIJE prirodno drvo) --- */
 :root {
     --primary-blue: #001a33;    /* Duboka, sjajna modra */
-    --wood-medium-dark: #3a2211; /* Malo tamnija, bogata nijansa drva */
+    --wood-medium-dark: #ded0bc; /* VRUĆE: Savršena svjetlija nijansa prirodnog hrasta */
     --accent-gold: #c5a059;     /* Elegantna zlatna */
     --text-dark: #ffffff;       /* Tekst prebačen u svijetli jer je drvo opet tamnije */
     --text-light: #ffffff;
@@ -16,13 +16,13 @@ body {
     color: var(--text-dark);
     line-height: 1.6;
     
-    /* DRVENA PODLOGA (Vraćena u dosta tamniju nijansu) */
+    /* DRVENA PODLOGA (Vraćena u svjetliji ton) */
     background-color: var(--wood-medium-dark);
     background-image: url('../assets/wood_pattern.png');
     background-repeat: repeat;
     background-position: center;
     
-    /* Stapanje koje omogućuje da se godovi jasno vide, ali u tamnijem tonu */
+    /* Promijenjeno u multiply za suptilno stapanje godova na svjetlijoj podlozi */
     background-blend-mode: multiply; 
 }
 
@@ -106,41 +106,4 @@ main { max-width: 1200px; margin: 180px auto 60px auto; padding: 0 20px; min-hei
 .page-header h2 { font-size: 1.2rem; color: var(--accent-gold); font-weight: 600; letter-spacing: 1px; }
 
 .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
-.card { background: rgba(0, 0, 0, 0.45); backdrop-filter: blur(4px); padding: 30px; border-radius: 8px; box-shadow: var(--shadow); border-top: 4px solid var(--accent-gold); border-left: 1px solid rgba(255,255,255,0.1); }
-.card h3 { color: var(--accent-gold); margin-bottom: 15px; }
-.card p { color: #e0dcd3; }
-
-/* Software Stranica Layout */
-.software-layout { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 50px; align-items: start; }
-.main-view { background: rgba(0, 0, 0, 0.4); aspect-ratio: 16/10; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #a0aab5; border: 1px dashed var(--accent-gold); }
-.thumbs-holder { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 15px; }
-.thumb-box { background: rgba(0, 0, 0, 0.4); aspect-ratio: 16/10; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; color: #8894a0; }
-
-.checkout-card { background: linear-gradient(180deg, #00264d 0%, #001122 100%); color: var(--text-light); padding: 40px; border-radius: 8px; border-top: 4px solid var(--accent-gold); box-shadow: 0 10px 30px rgba(0,0,0,0.3); margin-top: 25px; border: 1px solid rgba(255,255,255,0.1); }
-.checkout-card h3 { color: var(--text-light); }
-.price-tag { font-size: 2.5rem; font-weight: 700; color: var(--accent-gold); margin: 15px 0; }
-.btn-stack { display: flex; flex-direction: column; gap: 15px; }
-
-/* Gumbi */
-.btn { display: inline-block; padding: 12px 30px; border-radius: 4px; font-weight: 700; text-transform: uppercase; font-size: 0.85rem; text-align: center; cursor: pointer; border: 2px solid transparent; }
-.btn-solid { background: var(--accent-gold); color: #000; }
-.btn-solid:hover { background: #ffe07d; }
-.btn-outline { background: transparent; color: var(--text-light); border-color: var(--text-light); }
-.btn-outline:hover { background: var(--text-light); color: var(--primary-blue); }
-.btn-hero { border-color: var(--accent-gold); color: var(--accent-gold); border-radius: 30px; margin-top: 20px; }
-.btn-hero:hover { background: var(--accent-gold); color: #000; }
-
-footer { background: #000b14; color: rgba(255, 255, 255, 0.4); padding: 40px 20px; text-align: center; font-size: 0.9rem; border-top: 4px solid var(--accent-gold); }
-
-/* Responzivnost */
-@media (max-width: 768px) {
-    .menu-toggle { display: flex; }
-    .nav-links { position: absolute; top: 100%; left: 0; right: 0; background: #001122; flex-direction: column; gap: 0; width: 100%; max-height: 0; overflow: hidden; transition: var(--transition); }
-    .nav-links.active { max-height: 450px; }
-    .nav-links > li { width: 100%; text-align: center; padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
-    .dropdown-menu { position: static; transform: none; opacity: 1; visibility: visible; background: rgba(0, 0, 0, 0.2); display: none; }
-    .nav-links li:hover .dropdown-menu { display: block; }
-    .software-layout { grid-template-columns: 1fr; }
-    .logo img { height: 75px; }
-    main { margin-top: 130px; }
-}
+.card { background: rgba(0, 0, 0, 0.45); backdrop-filter: blur(4px); padding: 30px; border-radius: 8px; box-shadow: var(--shadow); border-top: 4px solid var(--accent-gold); border
