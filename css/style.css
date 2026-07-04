@@ -1,4 +1,4 @@
-/* --- VRIJEDNOSTI I BOJE --- */
+/* --- VRIJEDNOSTI I BOJE (Zadržavamo tvoju pogođenu podlogu drva) --- */
 :root {
     --primary-blue: #001a33;    /* Duboka, sjajna modra */
     --wood-perfect: #ded0bc;    /* Savršena nijansa prirodnog hrasta */
@@ -26,134 +26,74 @@ a { text-decoration: none; color: inherit; transition: var(--transition); }
 ul { list-style: none; }
 img { max-width: 100%; display: block; }
 
-/* --- 1. ZAKUCANA NAVIGACIJSKA TRAKA (FIKSNA VISINA) --- */
+/* --- 1. ROBOSTNA NAVIGACIJSKA TRAKA (FIKSNA VISINA OD 100px) --- */
 header {
     position: fixed;
     top: 0;
     width: 100%;
     
-    /* Eksplicitno definirana visina koja se NE SMIJE mijenjati */
-    height: 90px !important; 
-    max-height: 90px !important;
-    min-height: 90px !important;
+    /* Zaključana visina na 100px - daje dovoljno prostora i logotipu i menijima */
+    height: 100px !important; 
+    max-height: 100px !important;
+    min-height: 100px !important;
     
     z-index: 1000;
     background-color: var(--primary-blue);
     
-    /* Slike valova u pozadini, odmaknute od sredine da ne gužvaju elemente */
+    /* Valovi u pozadini, skalirani da prate visinu i odmaknuti na same rubove ekrana */
     background-image: url('../assets/wave_top.png'), url('../assets/wave_bottom.png');
     background-position: left center, right center;
     background-repeat: no-repeat, no-repeat;
     background-size: auto 100%;
     
-    border-bottom: 2px solid var(--accent-gold);
-    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    border-bottom: 3px solid var(--accent-gold);
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
 }
 
 nav {
     max-width: 1400px;
-    height: 100% !important; /* Prisiljava nav da striktno prati visinu od 90px */
+    height: 100% !important; /* Prisiljava nav element na punih 100px visine */
     margin: 0 auto;
     padding: 0 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    
+    /* Flexbox poravnanje koje drži sve elemente strogo u istoj vodoravnoj liniji */
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important; 
 }
 
-/* --- 2. LOGO POD KONTROLOM (Nema više bježanja) --- */
+/* --- 2. LOGO UKOČEN TOČNO U SREDINU TRAKE --- */
 .logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%; /* Koristi punu visinu od 90px */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 100% !important;
 }
 
 .logo img { 
-    /* Strogo kontrolirana visina logotipa s marginama unutar trake */
-    height: 70px !important; 
+    /* Visina logotipa fiksirana na 75px unutar trake od 100px (ostavlja 12.5px lufta gore i dolje) */
+    height: 75px !important; 
     width: auto !important;
+    max-height: 75px !important; 
+    
     border-radius: 4px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-    
-    /* Preventiva protiv rastezanja ili bježanja izvan 90px okvira */
-    max-height: 70px !important; 
-    object-fit: contain; 
+    object-fit: contain !important; 
 }
 
-/* --- 3. GLAVNI LINKOVI PORAVNATI U JEDNOJ LINIJI --- */
+/* --- 3. GLAVNI IZBORNIK SA SAVRŠENIM RAZMAKOM --- */
 .nav-links { 
-    display: flex; 
-    align-items: center; 
-    gap: 35px; 
+    display: flex !important; 
+    align-items: center !important; 
+    gap: 35px !important; 
     height: 100% !important;
 }
 
 .nav-links > li { 
     position: relative; 
-    display: flex;
-    align-items: center;
+    display: flex !important;
+    align-items: center !important;
     height: 100% !important; 
 }
 
-.nav-links a { 
-    font-size: 0.9rem; 
-    font-weight: 600; 
-    letter-spacing: 1px; 
-    color: var(--text-light);
-    white-space: nowrap; 
-    padding: 10px 0;
-}
-
-.nav-links a:hover, 
-.nav-links li:hover > a { 
-    color: var(--accent-gold); 
-}
-
-/* --- DROPDOWN IZBORNIK SE VEŽE NA PROREZ OD 90px --- */
-.dropdown-menu {
-    position: absolute;
-    top: 90px; /* Točno sjeda na donji rub fiksne trake */
-    left: 50%;
-    transform: translateX(-50%) translateY(10px);
-    background: #001122;
-    min-width: 220px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.5);
-    border-radius: 0 0 6px 6px;
-    padding: 10px 0;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.2s ease-in-out;
-    border-top: 3px solid var(--accent-gold);
-}
-
-.dropdown-menu li {
-    width: 100%;
-}
-
-.dropdown-menu li a { 
-    padding: 12px 20px; 
-    display: block; 
-    font-size: 0.85rem; 
-    color: rgba(255, 255, 255, 0.85);
-    text-align: left;
-}
-
-.dropdown-menu li a:hover { 
-    background: rgba(197, 160, 89, 0.15); 
-    color: var(--accent-gold); 
-    padding-left: 25px; 
-}
-
-.nav-links li:hover .dropdown-menu { 
-    opacity: 1; 
-    visibility: visible; 
-    transform: translateX(-50%) translateY(0); 
-}
-
-/* Hamburger gumb */
-.menu-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
-.menu-toggle span { width: 25px; height: 3px; background-color: var(--text-light); transition: var(--transition); }
-
-/* --- SADRŽAJ (Gurnut točno ispod zakucane trake) --- */
-main { 
-    max-width: 1200px;
+.nav-links a {
