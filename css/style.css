@@ -1,7 +1,7 @@
 /* --- VRIJEDNOSTI I BOJE (Potpuna kontrola nad izolacijom teksta) --- */
 :root {
     --primary-blue: #001a33;    /* Duboka, sjajna modra */
-    --wood-medium-dark: #3a2211; /* Zadržana varijabla radi kompatibilnosti, ali se ne koristi za podlogu */
+    --wood-medium-dark: #3a2211; /* Zadržana varijabla radi kompatibilnosti */
     --accent-gold: #c5a059;     /* Elegantna zlatna */
     --text-dark: #000000;       /* Glavna slova na stranici su sada CRNA */
     --text-light: #ffffff;      /* Svijetli tekst za elemente na plavoj podlozi */
@@ -16,10 +16,9 @@ body {
     color: var(--text-dark); /* Crna slova na razini cijelog body-a */
     line-height: 1.6;
     
-    /* DRVENA PODLOGA (Izvorni .png bez ikakvog dodatnog bojanja ili stapanja) */
-    background-image: url('../assets/wood_pattern.png');
-    background-repeat: repeat;
-    background-position: center;
+    /* GLAVNA PODLOGA S UZORKOM DRVA (Inline SVG bešavni godovi drva preko blage bež podloge) */
+    background-color: #f7f4eb; 
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpath d='M0 10c20 0 30 5 60 5s40-5 60-5v2c-20 0-30 5-60 5S20 12 0 12zm0 30c20 0 40 3 60 3s40-3 60-3v2c-20 0-40 3-60 3S20 42 0 42zm0 30c30 0 30 7 60 7s30-7 60-7v2c-30 0-30 7-60 7S30 74 0 74zm0 30c15 0 35 2 60 2s45-2 60-2v2c-15 0-35 2-60 2s45-2 60-2z' fill='%233a2211' fill-opacity='0.035'/%3E%3C/svg%3E");
 }
 
 a { text-decoration: none; color: inherit; transition: var(--transition); }
@@ -62,7 +61,7 @@ nav {
     height: 110px; 
     width: auto;
     border-radius: 4px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
 /* Izolirani linkovi unutar navigacije kako se ne bi miješali s crnim slovima body-ja */
