@@ -149,7 +149,7 @@ footer { background: #000b14; color: rgba(255, 255, 255, 0.4); padding: 40px 20p
   }
 
     .nav-links.active {
-      max-height: 450px;
+      max-height: none !important; /* Maknuto 450px - dopušta meniju da se otvori do kraja */
     }
 
     .nav-links > li {
@@ -185,17 +185,17 @@ footer { background: #000b14; color: rgba(255, 255, 255, 0.4); padding: 40px 20p
   }
 
   .dropdown-menu {
-    position: static; /* Isključuje apsolutno pozicioniranje s desktopa */
-    transform: none; /* Miče "translateX" koji ga gura previše lijevo */
+    position: static;
+    transform: none;
     opacity: 1;
     visibility: visible;
-    background: rgba(0, 11, 20, 0.5); /* Malo tamnija prozirna podloga unutar izbornika */
+    background: rgba(0, 0, 0, 0.2) !important; /* Blaga prozirna podloga da se razlikuje od glavnih linkova */
     display: none;
-    width: 100%; /* Razvlači podmeni preko cijele širine mobilnog menija */
-    box-shadow: none; /* Sjene nam ne trebaju na mobitelu */
-    border-top: none; /* Miče zlatnu crtu koja smeta u nizu */
-    border-left: 2px solid var(--accent-gold); /* Diskretna zlatna crta s lijeve strane za strukturu */
-    padding-left: 15px; /* Blago uvlačenje teksta podmenija udesno */
+    width: 100%;
+    box-shadow: none;
+    border-top: none;
+    border-left: 2px solid var(--accent-gold); /* Fina zlatna crta s lijeve strane */
+    padding-left: 15px;
   }
 
     .dropdown-menu li a {
@@ -204,6 +204,6 @@ footer { background: #000b14; color: rgba(255, 255, 255, 0.4); padding: 40px 20p
     }
 
   .nav-links li:hover .dropdown-menu {
-    display: block;
+    display: block !important;
   }
 }
