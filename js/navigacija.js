@@ -11,31 +11,32 @@ document.addEventListener("DOMContentLoaded", function() {
                 <span></span>
             </div>
             <ul class="nav-links" id="nav-list">
-                <li><a href="index.html">Početna</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li>
-                    <a href="#">Wood & Epoxy</a>
+                    <a href="wood-epoxy.html">Wood & Epoxy</a>
                     <ul class="dropdown-menu">
-                        <li><a href="stolovi.html">Stolovi</a></li>
-                        <li><a href="proizvodi.html">Unikatni Proizvodi</a></li>
+                        <li><a href="wood-epoxy.html#products">Products</a></li>
+                        <li><a href="wood-epoxy.html#gallery">Gallery</a></li>
+                        <li><a href="wood-epoxy.html#custom">Custom</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="Software.html">Software</a>
+                    <a href="software.html">Software</a>
                     <ul class="dropdown-menu">
-                        <li><a href="Software.html#probe">ProbeXYZ - UCCNC plugin</a></li>
-                        <li><a href="macros.html">Custom M-Code Macros</a></li>
+                        <li><a href="software.html#probe">ProbeXYZ - UCCNC plugin</a></li>
                     </ul>
                 </li>
-                <li><a href="kontakt.html">Kontakt</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
     `;
 
-    // Umetanje navigacije na vrh stranice
+    // Ubacivanje navigacije na sam početak body elementa
     document.body.insertAdjacentHTML('afterbegin', navHTML);
 
-    // Automatsko pokretanje mobilnog hamburger menija
+    // Mobilna skripta za hamburger klik
     const menuToggle = document.getElementById('mobile-menu');
     const navLinks = document.getElementById('nav-list');
 
