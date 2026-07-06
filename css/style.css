@@ -130,13 +130,80 @@ footer { background: #000b14; color: rgba(255, 255, 255, 0.4); padding: 40px 20p
 
 /* Responzivnost */
 @media (max-width: 768px) {
-    .menu-toggle { display: flex; }
-    .nav-links { position: absolute; top: 100%; left: 0; right: 0; background: #001122; flex-direction: column; gap: 0; width: 100%; max-height: 0; overflow: hidden; transition: var(--transition); }
-    .nav-links.active { max-height: 450px; }
-    .nav-links > li { width: 100%; text-align: center; padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
-    .dropdown-menu { position: static; transform: none; opacity: 1; visibility: visible; background: rgba(0, 0, 0, 0.2); display: none; }
-    .nav-links li:hover .dropdown-menu { display: block; }
-    .software-layout { grid-template-columns: 1fr; }
-    .logo img { height: 75px; }
-    main { margin-top: 130px; }
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #001122;
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: var(--transition);
+  }
+
+    .nav-links.active {
+      max-height: 450px;
+    }
+
+    .nav-links > li {
+      width: 100%;
+      text-align: center;
+      padding: 15px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+  .dropdown-menu {
+    position: static;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    background: rgba(0, 0, 0, 0.2);
+    display: none;
+  }
+
+  .nav-links li:hover .dropdown-menu {
+    display: block;
+  }
+
+  .software-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .logo img {
+    height: 75px;
+  }
+
+  main {
+    margin-top: 130px;
+  }
+
+  .dropdown-menu {
+    position: static; /* Isključuje apsolutno pozicioniranje s desktopa */
+    transform: none; /* Miče "translateX" koji ga gura previše lijevo */
+    opacity: 1;
+    visibility: visible;
+    background: rgba(0, 11, 20, 0.5); /* Malo tamnija prozirna podloga unutar izbornika */
+    display: none;
+    width: 100%; /* Razvlači podmeni preko cijele širine mobilnog menija */
+    box-shadow: none; /* Sjene nam ne trebaju na mobitelu */
+    border-top: none; /* Miče zlatnu crtu koja smeta u nizu */
+    border-left: 2px solid var(--accent-gold); /* Diskretna zlatna crta s lijeve strane za strukturu */
+    padding-left: 15px; /* Blago uvlačenje teksta podmenija udesno */
+  }
+
+    .dropdown-menu li a {
+      padding: 8px 20px;
+      text-align: left; /* Osigurava da je tekst uredno poravnat na lijevo */
+    }
+
+  .nav-links li:hover .dropdown-menu {
+    display: block;
+  }
 }
