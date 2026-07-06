@@ -68,7 +68,7 @@ nav {
 .nav-links { display: flex; align-items: center; gap: 30px; }
 .nav-links > li { position: relative; padding: 15px 0; }
   .nav-links a {
-    font-size: 1.1rem; /* Povećano s 0.95rem radi bolje uočljivosti */
+    font-size: 1.6rem; /* Povećano s 0.95rem radi bolje uočljivosti */
     font-weight: 600;
     letter-spacing: 1px;
     color: var(--text-light) !important;
