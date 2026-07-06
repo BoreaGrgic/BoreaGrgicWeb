@@ -128,7 +128,9 @@ main { max-width: 1200px; margin: 180px auto 60px auto; padding: 0 20px; min-hei
 
 footer { background: #000b14; color: rgba(255, 255, 255, 0.4); padding: 40px 20px; text-align: center; font-size: 0.9rem; border-top: 4px solid var(--accent-gold); }
 
-/* Responzivnost */
+/* ==========================================
+   RESPONZIVNOST & MOBILNI MENI (ZAMIJENI OD OVDJE DO KRAJA DATOTEKE)
+   ========================================== */
 @media (max-width: 768px) {
   .menu-toggle {
     display: flex;
@@ -149,28 +151,44 @@ footer { background: #000b14; color: rgba(255, 255, 255, 0.4); padding: 40px 20p
   }
 
     .nav-links.active {
-      max-height: none !important; /* Maknuto 450px - dopušta meniju da se otvori do kraja */
+      max-height: none !important; /* Omogućuje meniju da se otvori do kraja */
     }
 
     .nav-links > li {
       width: 100%;
-      text-align: center;
-      padding: 15px 0;
+      text-align: left; /* Prebačeno na lijevo radi ljepše strukture s podmenijem */
+      padding: 10px 20px;
       border-bottom: 1px solid rgba(255,255,255,0.05);
     }
 
+  /* POPRAVLJEN MOBILNI PODIZBORNIK: Trajno vidljiv unutar otvorenog hamburgera */
   .dropdown-menu {
     position: static;
     transform: none;
     opacity: 1;
     visibility: visible;
-    background: rgba(0, 0, 0, 0.2);
-    display: none;
+    background: rgba(0, 0, 0, 0.25) !important; /* Diskretno tamnija podloga */
+    display: block !important; /* Forsiramo prikaz na mobitelu jer nema hovera */
+    width: 100%;
+    box-shadow: none;
+    border-top: none;
+    border-left: 3px solid var(--accent-gold); /* Jasna zlatna okomita crta vodilica */
+    margin-top: 8px;
+    margin-bottom: 5px;
+    padding: 5px 0 5px 15px; /* Uvlačenje udesno za jasnu hijerarhiju */
+    border-radius: 0;
   }
 
-  .nav-links li:hover .dropdown-menu {
-    display: block;
-  }
+    .dropdown-menu li {
+      width: 100%;
+    }
+
+      .dropdown-menu li a {
+        padding: 8px 10px;
+        text-align: left;
+        font-size: 0.9rem;
+        display: block;
+      }
 
   .software-layout {
     grid-template-columns: 1fr;
@@ -182,28 +200,5 @@ footer { background: #000b14; color: rgba(255, 255, 255, 0.4); padding: 40px 20p
 
   main {
     margin-top: 130px;
-  }
-
-  .dropdown-menu {
-    position: static;
-    transform: none;
-    opacity: 1;
-    visibility: visible;
-    background: rgba(0, 0, 0, 0.2) !important; /* Blaga prozirna podloga da se razlikuje od glavnih linkova */
-    display: none;
-    width: 100%;
-    box-shadow: none;
-    border-top: none;
-    border-left: 2px solid var(--accent-gold); /* Fina zlatna crta s lijeve strane */
-    padding-left: 15px;
-  }
-
-    .dropdown-menu li a {
-      padding: 8px 20px;
-      text-align: left; /* Osigurava da je tekst uredno poravnat na lijevo */
-    }
-
-  .nav-links li:hover .dropdown-menu {
-    display: block !important;
   }
 }
