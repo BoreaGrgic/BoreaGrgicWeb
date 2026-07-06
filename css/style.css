@@ -68,11 +68,11 @@ nav {
 .nav-links { display: flex; align-items: center; gap: 30px; }
 .nav-links > li { position: relative; padding: 15px 0; }
   .nav-links a {
-    font-size: 0.95rem;
+    font-size: 1.1rem; /* Povećano s 0.95rem radi bolje uočljivosti */
     font-weight: 600;
     letter-spacing: 1px;
     color: var(--text-light) !important;
-    white-space: nowrap; /* SPREČAVA PRELAMANJE TEKSTA U NOVI RED */
+    white-space: nowrap;
   }
 .nav-links a:hover, .nav-links li:hover > a { color: var(--accent-gold) !important; }
 
@@ -195,11 +195,17 @@ footer { background: #000b14; color: rgba(255, 255, 255, 0.4); padding: 40px 20p
       width: 100%;
     }
 
-      .dropdown-menu li a {
-        padding: 8px 25px 8px 20px; /* Dodano više prostora s desne strane (25px) */
-        text-align: left;
-        white-space: nowrap; /* Osigurava jedan red i na mobilnim ekranima */
-      }
+  /* Ovdje smo dodali .nav-links a za kontrolu veličine glavnog menija na mobitelu */
+  .nav-links a {
+    font-size: 1.0rem !important; /* Veći font za glavne mobilne linkove */
+  }
+
+  .dropdown-menu li a {
+    padding: 8px 25px 8px 20px;
+    text-align: left;
+    white-space: nowrap;
+    font-size: 0.85rem !important; /* Možeš usput definirati i malo manji font za podizbornik da se vidi razlika */
+  }
 
   .software-layout {
     grid-template-columns: 1fr;
