@@ -7,73 +7,49 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- HEADER -->
-    <header>
-        <nav>
-            <a href="index.html" class="logo"><img src="assets/logo.png" alt="Borea Grgić Logo"></a>
-            <div class="menu-toggle" id="mobile-menu-toggle"><span></span><span></span><span></span></div>
-            <ul class="nav-links" id="nav-links-menu">
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="wood-epoxy.html">WOOD & EPOXY ▾</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="wood-epoxy.html#products">Products</a></li>
-                        <li><a href="wood-epoxy.html#gallery">Gallery</a></li>
-                        <li><a href="wood-epoxy.html#custom">Custom Orders</a></li>
-                    </ul>
-                </li>
-                <li><a href="software.html">SOFTWARE ▾</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="software.html">ProbeXYZ - plugin for UCCNC</a></li>
-                    </ul>
-                </li>
-                <li><a href="about.html">ABOUT</a></li>
-                <li><a href="contact.html">CONTACT</a></li>
-            </ul>
-        </nav>
-    </header>
+  <main>
+    <div class="page-header">
+      <h1>CNC Software Solutions</h1>
+      <h2>Striving for machine process optimization and automation</h2>
+    </div>
 
-    <main>
-        <div class="page-header">
-            <h1>CNC Software Solutions</h1>
-            <h2>Striving for machine process optimization and automation</h2>
+    <div class="software-layout">
+      <div class="gallery-holder">
+        <div class="main-view"><span>[ Software Interface (screen1.png) ]</span></div>
+        <div class="thumbs-holder">
+          <div class="thumb-box">[ Setup ]</div>
+          <div class="thumb-box">[ Diagram ]</div>
+          <div class="thumb-box">[ Macro ]</div>
         </div>
+      </div>
 
-        <div class="software-layout">
-            <div class="gallery-holder">
-                <div class="main-view"><span>[ Software Interface (screen1.png) ]</span></div>
-                <div class="thumbs-holder">
-                    <div class="thumb-box">[ Setup ]</div>
-                    <div class="thumb-box">[ Diagram ]</div>
-                    <div class="thumb-box">[ Macro ]</div>
-                </div>
-            </div>
+      <div>
+        <span style="font-size: 0.8rem; background: var(--bg-alt); padding: 4px 10px; border-radius:4px; font-weight:700;">PROBEXYZ.DLL PLUGIN</span>
+        <p style="margin: 20px 0; text-align: justify;">
+          An original, high-performance plugin tailored for the UCCNC environment. Developed specifically to automate the 3D probing sequence and automatically zero your X, Y, and Z axes simultaneously.
+        </p>
 
-            <div>
-                <span style="font-size: 0.8rem; background: var(--bg-alt); padding: 4px 10px; border-radius:4px; font-weight:700;">PROBEXYZ.DLL PLUGIN</span>
-                <p style="margin: 20px 0; text-align: justify;">
-                    An original, high-performance plugin tailored for the UCCNC environment. Developed specifically to automate the 3D probing sequence and automatically zero your X, Y, and Z axes simultaneously.
-                </p>
-                
-                <h4 style="margin-bottom: 10px; color: var(--wood-brown);">Key Features:</h4>
-                <ul style="margin-bottom: 30px; padding-left: 20px; list-style-type: square;">
-                    <li style="margin-bottom: 5px;">Fast and highly reliable 3D probing routine (X, Y, Z).</li>
-                    <li style="margin-bottom: 5px;">Smart probe crash protection algorithms.</li>
-                    <li style="margin-bottom: 5px;">Seamless mapping to custom macros and hardware buttons.</li>
-                </ul>
+        <h4 style="margin-bottom: 10px; color: var(--wood-brown);">Key Features:</h4>
+        <ul style="margin-bottom: 30px; padding-left: 20px; list-style-type: square;">
+          <li style="margin-bottom: 5px;">Fast and highly reliable 3D probing routine (X, Y, Z).</li>
+          <li style="margin-bottom: 5px;">Smart probe crash protection algorithms.</li>
+          <li style="margin-bottom: 5px;">Seamless mapping to custom macros and hardware buttons.</li>
+        </ul>
 
-                <div class="checkout-card">
-                    <h3>License & Download</h3>
-                    <div class="price-tag">39.00 EUR <span style="font-size: 1rem; color: #aaa; font-weight: 400;">+ VAT</span></div>
-                    <div class="btn-stack">
-                        <button class="btn btn-solid" onclick="otvoriPaddleSustav()">Buy License (Paddle)</button>
-                        <a href="assets/download/ProbeXYZ.zip" class="btn btn-outline" download>Download Demo (.ZIP)</a>
-                    </div>
-                </div>
-            </div>
+        <div class="checkout-card">
+          <h3>License & Download</h3>
+          <div class="price-tag">39.00 EUR <span style="font-size: 1rem; color: #aaa; font-weight: 400;">+ VAT</span></div>
+          <div class="btn-stack">
+            <button class="btn btn-solid" onclick="otvoriPaddleSustav()">Buy License (Paddle)</button>
+            <a href="assets/download/ProbeXYZ.zip" class="btn btn-outline" download>Download Demo (.ZIP)</a>
+          </div>
         </div>
-    </main>
+      </div>
+    </div>
+  </main>
 
-    <footer><p>&copy; 2026 BOREA GRGIĆ. All rights reserved.</p></footer>
-    <script src="js/main.js"></script>
+  <footer><p>&copy; 2026 BOREA GRGIĆ. All rights reserved.</p></footer>
+  <script src="js/main.js"></script>
+  <script src="js/navigacija.js"></script>
 </body>
 </html>
