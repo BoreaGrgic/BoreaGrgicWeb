@@ -140,6 +140,51 @@ main { max-width: 1200px; margin: 180px auto 60px auto; padding: 0 20px; min-hei
 
 footer { background: #000b14; color: rgba(255, 255, 255, 0.4); padding: 40px 20px; text-align: center; font-size: 0.9rem; border-top: 4px solid var(--accent-gold); }
 
+/* --- ABOUT PAGE STYLOVI (PC ŠIRINA) --- */
+.about-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px; /* Razmak između dvije sekcije */
+}
+
+.about-profile {
+  display: flex;
+  align-items: center;
+  gap: 50px; /* Razmak između slike i teksta */
+}
+
+  /* Cik-cak efekt za PC: svaka druga sekcija okreće mjesta slici i tekstu */
+  .about-profile.reversed {
+    flex-direction: row-reverse;
+  }
+
+.profile-image {
+  flex: 0 0 350px; /* Fiksna širina za sliku na PC-ju */
+}
+
+  .profile-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* Blago zaobljeni rubovi za moderniji izgled */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); /* Elegantna sjena */
+    object-fit: cover;
+  }
+
+.profile-text {
+  flex: 1;
+}
+
+  .profile-text p {
+    text-align: justify;
+    line-height: 1.8;
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.9); /* Prilagodi boju svom dizajnu */
+    margin: 0;
+  }
+
 /* ==========================================
    RESPONZIVNOST & MOBILNI MENI (ZAMIJENI OD OVDJE DO KRAJA DATOTEKE)
    ========================================== */
@@ -217,5 +262,23 @@ footer { background: #000b14; color: rgba(255, 255, 255, 0.4); padding: 40px 20p
 
   main {
     margin-top: 130px;
+  }
+  /* MOBILNI STYLOVI ZA ABOUT STRANICU */
+  .about-profile, .about-profile.reversed {
+    flex-direction: column; /* Slaže sliku pa tekst jedno ispod drugog */
+    gap: 25px;
+    text-align: center;
+  }
+
+  .profile-image {
+    flex: 0 0 auto;
+    width: 80%; /* Slika zauzima 80% širine mobilnog ekrana */
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .profile-text p {
+    text-align: left; /* Na mobitelu je opravdano poravnanje (justify) često ružno, 'left' je čitljivije */
+    font-size: 1rem;
   }
 }
