@@ -12,14 +12,21 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
-    color: var(--text-dark); /* Crna slova na razini cijelog body-a */
-    line-height: 1.6;
-    
-    /* GLAVNA PODLOGA S UZORKOM DRVA (Inline SVG bešavni godovi drva preko blage bež podloge) */
-    background-color: #f7f4eb; 
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpath d='M0 10c20 0 30 5 60 5s40-5 60-5v2c-20 0-30 5-60 5S20 12 0 12zm0 30c20 0 40 3 60 3s40-3 60-3v2c-20 0-40 3-60 3S20 42 0 42zm0 30c30 0 30 7 60 7s30-7 60-7v2c-30 0-30 7-60 7S30 74 0 74zm0 30c15 0 35 2 60 2s45-2 60-2v2c-15 0-35 2-60 2s45-2 60-2z' fill='%233a2211' fill-opacity='0.035'/%3E%3C/svg%3E");
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* ili tvoj postojeći font */
+  background-color: #f7f5f0; /* tvoja postojeća krem podloga */
+  /* GLOBALNE POSTAVKE ZA TEKST NA SVIM STRANICAMA */
+  color: #001122 !important; /* Tamna plavo-crna boja za maksimalnu čitljivost */
+  font-size: 1.05rem; /* Idealna, ujednačena veličina slova */
+  line-height: 1.8; /* Odličan prored za ugodno čitanje */
+  /* GLAVNA PODLOGA S UZORKOM DRVA (Inline SVG bešavni godovi drva preko blage bež podloge) */
+  background-color: #f7f4eb;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpath d='M0 10c20 0 30 5 60 5s40-5 60-5v2c-20 0-30 5-60 5S20 12 0 12zm0 30c20 0 40 3 60 3s40-3 60-3v2c-20 0-40 3-60 3S20 42 0 42zm0 30c30 0 30 7 60 7s30-7 60-7v2c-30 0-30 7-60 7S30 74 0 74zm0 30c15 0 35 2 60 2s45-2 60-2v2c-15 0-35 2-60 2s45-2 60-2z' fill='%233a2211' fill-opacity='0.035'/%3E%3C/svg%3E");
 }
+
+h1, h2, h3, h4 {
+  color: #001122; /* Ista tamna boja za sve naslove na webu */
+}
+
 
 a { text-decoration: none; color: inherit; transition: var(--transition); }
 ul { list-style: none; }
@@ -165,25 +172,23 @@ footer { background: #000b14; color: rgba(255, 255, 255, 0.4); padding: 40px 20p
   flex: 0 0 350px; /* Fiksna širina za sliku na PC-ju */
 }
 
-  .profile-image img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px; /* Blago zaobljeni rubovi za moderniji izgled */
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); /* Elegantna sjena */
-    object-fit: cover;
-  }
+.profile-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px; /* Blago zaobljeni rubovi za moderniji izgled */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); /* Elegantna sjena */
+  object-fit: cover;
+}
 
 .profile-text {
   flex: 1;
 }
 
-  .profile-text p {
-    text-align: justify;
-    line-height: 1.8;
-    font-size: 1.05rem;
-    color: rgba(255, 255, 255, 0.9); /* Prilagodi boju svom dizajnu */
-    margin: 0;
-  }
+.profile-text p {
+  text-align: justify;
+  line-height: 1.8;
+  margin: 0;
+}
 
 /* ==========================================
    RESPONZIVNOST & MOBILNI MENI (ZAMIJENI OD OVDJE DO KRAJA DATOTEKE)
