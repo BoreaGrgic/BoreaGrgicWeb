@@ -59,28 +59,30 @@
 
         <!-- Kartica za Download i Kupnju -->
         <div class="checkout-card" style="background: rgba(0,0,0,0.03); padding: 25px; border-radius: 8px; border: 1px solid rgba(0,0,0,0.08);">
-          <h3 style="color: #D1B48C;">Download & License</h3>
 
-          <div class="price-tag" style="font-size: 1.5rem; font-weight: bold; margin: 10px 0 5px 0; color: #D1B48C;">
+          <div class="price-tag" style="font-size: 1.5rem; font-weight: bold; margin: 0 0 5px 0; color: #D1B48C;">
             24.90 EUR
           </div>
-          <div style="font-size: 0.8rem; color: #666; margin-bottom: 20px;">
+          <div style="font-size: 0.8rem; color: #666; margin-bottom: 5px;">
             (VAT included)
           </div>
-            <div class="btn-stack" style="display: flex; flex-direction: column; gap: 10px;">
-              <!-- Gumb za Paddle -->
-              <button class="btn btn-solid" onclick="otvoriPaddleSustav()" style="width: 100%; padding: 12px; font-weight: bold; cursor: pointer;">
-                Buy License (Paddle)
-              </button>
-              <!-- Gumb za download potpuno funkcionalnog paketa -->
-              <a href="assets/download/ProbeXYZ_pack.zip" class="btn btn-outline" download style="display: block; text-align: center; padding: 12px; border: 1px solid #001122; color: #001122; text-decoration: none; font-weight: bold; border-radius: 4px;">
-                Download Demo Pack (.ZIP)
-              </a>
-              <!-- Gumb za otvaranje PDF priručnika u novom tabu -->
-              <a href="assets/download/Probe_XYZ_instructions_v1_EN.pdf" target="_blank" class="btn btn-text" style="display: block; text-align: center; padding: 10px; color: #001122; text-decoration: underline; font-weight: 500; font-size: 0.9rem;">
-                Read User Manual (PDF)
-              </a>
-            </div>
+          <div style="font-size: 0.85rem; color: #444; font-style: italic; margin-bottom: 20px;">
+            License is tied to the controller serial number.
+          </div>
+
+          <div class="btn-stack" style="display: flex; flex-direction: column; gap: 10px;">
+            <!-- Gumb za Paddle -->
+            <button class="btn btn-solid" onclick="otvoriPaddleSustav()" style="width: 100%; padding: 12px; font-weight: bold; cursor: pointer;">
+              Buy License (Paddle)
+            </button>
+            <!-- Istaknuti gumb za 30-dnevni trial paket -->
+            <a href="assets/download/ProbeXYZ_pack.zip" class="btn btn-outline" download style="display: block; text-align: center; padding: 12px; border: 2px solid #001122; color: #001122; text-decoration: none; font-weight: bold; border-radius: 4px; background: rgba(0, 17, 34, 0.03);">
+              Download Fully Functional 30-Day Trial (.ZIP)
+            </a>
+            <!-- Gumb za otvaranje PDF priručnika u novom tabu -->
+            <a href="assets/download/Probe_XYZ_instructions_v1_EN.pdf" target="_blank" class="btn btn-text" style="display: block; text-align: center; padding: 10px; color: #001122; text-decoration: underline; font-weight: 500; font-size: 0.9rem;">
+              Read User Manual (PDF)
+            </a>
           </div>
         </div>
 
