@@ -19,12 +19,11 @@
     // Postavljanje sandbox okruženja za testiranje
     Paddle.Environment.set("sandbox"); 
     
-    // ZAMIJENI 'test_tvoj_token_ovdje' sa stvarnim klijentskim tokenom iz Developer tools > Authentication
+    // Inicijalizacija s tvojim klijentskim testnim tokenom
     Paddle.Initialize({ 
       token: "test_593f9264a4b5dd9e12a8d74bb80" 
     });
-  </script>
-</head><body>
+  </script></head><body>
 
   <main>
     <div class="page-header">
@@ -86,7 +85,7 @@
           <div class="price-tag" style="font-size: 1.5rem; font-weight: bold; margin: 0 0 5px 0; color: #D1B48C;">
             19.99 EUR
           </div>
-          <!-- Promijenjeno u VAT not included -->
+          <!-- Prikaz bez uključenog poreza -->
           <div style="font-size: 0.8rem; color: #666; margin-bottom: 5px;">
             (VAT not included)
           </div>
@@ -106,7 +105,7 @@
             <!-- Gumb za otvaranje PDF priručnika u novom tabu -->
             <a href="assets/download/Probe_XYZ_instructions_v1_EN.pdf" target="_blank" class="btn btn-text" style="display: block; text-align: center; padding: 10px; color: #001122; text-decoration: underline; font-weight: 500; font-size: 0.9rem;">
               Read User Manual (PDF)
-            </a>
+            </button>
           </div>
         </div>
 
@@ -115,13 +114,19 @@
 
   <footer><p>&copy; 2026 BOREA GRGIĆ. All rights reserved.</p></footer>
   
-  <!-- Skripte za galeriju i Paddle integraciju -->
+  <!-- Skripta za galeriju slika -->
   <script>
     function changeImage(imageSrc) {
       document.getElementById('main-software-img').src = imageSrc;
     }
-    
-    // Funkcija koja otvara checkout za tvoj plugin
+  </script>
+  
+  <!-- Učitavanje vanjskih skripti -->
+  <script src="js/main.js"></script>
+  <script src="js/navigacija.js"></script>
+
+  <!-- ČISTA I SIGURNA PADDLE AKCIJA POSTAVLJENA NA SAMO DNO -->
+  <script>
     function otvoriPaddleSustav() {
       Paddle.Checkout.open({
         settings: {
@@ -139,6 +144,5 @@
       });
     }
   </script>
-  
-  <script src="js/main.js"></script>
-  <script src="js/navigacija.js"></script></body></html>
+
+</body></html>

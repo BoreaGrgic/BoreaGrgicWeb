@@ -10,7 +10,3 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Paddle simulacija
-function otvoriPaddleSustav() {
-    alert("Pokretanje integriranog Paddle servisa za naplatu...\nCheckout prozor se otvara preko ekrana.");
-}
