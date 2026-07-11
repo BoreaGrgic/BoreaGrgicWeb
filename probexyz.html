@@ -12,6 +12,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BOREA GRGIĆ | Probe XYZ UCCNC Plugin</title>
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- 1. UKLJUČIVANJE SLUŽBENE PADDLE JS SKRIPTE -->
+  <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+  <script>
+    // Postavljanje sandbox okruženja za testiranje
+    Paddle.Environment.set("sandbox"); 
+    
+    // ZAMIJENI 'test_tvoj_token_ovdje' sa stvarnim klijentskim tokenom iz Developer tools > Authentication
+    Paddle.Initialize({ 
+      token: "test_tvoj_token_ovdje" 
+    });
+  </script>
 </head><body>
 
   <main>
@@ -70,11 +82,13 @@
         <!-- Kartica za Download i Kupnju -->
         <div class="checkout-card" style="background: rgba(0,0,0,0.03); padding: 25px; border-radius: 8px; border: 1px solid rgba(0,0,0,0.08);">
 
+          <!-- Popravljena cijena -->
           <div class="price-tag" style="font-size: 1.5rem; font-weight: bold; margin: 0 0 5px 0; color: #D1B48C;">
-            24.90 EUR
+            19.99 EUR
           </div>
+          <!-- Promijenjeno u VAT not included -->
           <div style="font-size: 0.8rem; color: #666; margin-bottom: 5px;">
-            (VAT included)
+            (VAT not included)
           </div>
           <div style="font-size: 0.85rem; color: #444; font-style: italic; margin-bottom: 20px;">
             License is tied to the controller serial number.
@@ -101,14 +115,28 @@
 
   <footer><p>&copy; 2026 BOREA GRGIĆ. All rights reserved.</p></footer>
   
-  <!-- Skripta za brzu izmjenu slika u galeriji -->
+  <!-- Skripte za galeriju i Paddle integraciju -->
   <script>
     function changeImage(imageSrc) {
       document.getElementById('main-software-img').src = imageSrc;
     }
     
+    // Funkcija koja otvara checkout za tvoj plugin
     function otvoriPaddleSustav() {
-      alert("Checkout system integration is pending regulatory setup. Demo download is fully available!");
+      Paddle.Checkout.open({
+        settings: {
+          displayMode: 'overlay',
+          theme: 'light',
+          locale: 'en',
+          variant: 'one-page'
+        },
+        items: [
+          {
+            priceId: 'pri_01kx9e005vss58j1sdgawnpxf9', // ID tvoje cijene od 19.99€
+            quantity: 1
+          }
+        ]
+      });
     }
   </script>
   
