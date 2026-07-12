@@ -13,14 +13,14 @@ document.addEventListener("DOMContentLoaded", function () {
             <ul class="nav-links" id="nav-list">
                 <li><a href="index.html">Home</a></li>
                 <li>
-                    <a href="wood-epoxy.html">Wood & Epoxy</a>
+                    <a href="wood-epoxy.html#hungryhearts">Wood & Epoxy</a>
                     <ul class="dropdown-menu">
                         <li><a href="wood-epoxy.html#hungryhearts">Hungry Hearts</a></li>
                         <li><a href="wood-epoxy.html#gin-epoxy">Gin & Epoxy</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="software.html">Software</a>
+                    <a href="probexyz.html">Software</a>
                     <ul class="dropdown-menu">
                         <li><a href="probexyz.html">ProbeXYZ - UCCNC plugin</a></li>
                     </ul>
