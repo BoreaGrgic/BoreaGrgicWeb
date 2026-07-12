@@ -249,6 +249,21 @@
         font-size: 1.6rem;
     }
 }
+/* Fiks za logo učitan preko JavaScripta */
+.logo img, .nav-logo-img {
+  max-width: 220px !important;
+  max-height: 110px !important;
+  width: 100% !important;
+  height: auto !important;
+  object-fit: contain !important;
+}
+
+@media (max-width: 768px) {
+  .logo img, .nav-logo-img {
+    max-width: 150px !important;
+    max-height: 75px !important;
+  }
+}
 /* Sprječava lom izgleda prilikom JS injectiona */
 .logo img {
   max-width: 220px !important;

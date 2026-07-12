@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var navHTML = '<header>' +
         '<nav>' +
             '<div class="logo">' +
-                '<a href="index.html"><img src="assets/logo.png" alt="Logo" width="220" height="110" style="object-fit: contain;"></a>' +
+                '<a href="index.html"><img src="assets/logo.png" alt="Logo" class="nav-logo-img"></a>' +
             '</div>' +
             '<div class="menu-toggle" id="mobile-menu">' +
                 '<span></span>' +
