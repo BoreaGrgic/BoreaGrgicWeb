@@ -506,7 +506,4 @@ footer {
     text-align: left; /* Na mobitelu je opravdano poravnanje (justify) često ružno, 'left' je čitljivije */
     font-size: 1rem;
   }
-  section[id] {
-    scroll-margin-top: 280px;
-  }
 }

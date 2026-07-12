@@ -13,9 +13,9 @@ document.addEventListener("DOMContentLoaded", function () {
             <ul class="nav-links" id="nav-list">
                 <li><a href="index.html">Home</a></li>
                 <li>
-                    <a href="wood-epoxy.html#hungryhearts">Wood & Epoxy</a>
+                    <a href="wood-epoxy.html">Wood & Epoxy</a>
                     <ul class="dropdown-menu">
-                        <li><a href="wood-epoxy.html#hungryhearts">Hungry Hearts</a></li>
+                        <li><a href="wood-epoxy.html">Hungry Hearts</a></li>
                         <li><a href="wood-epoxy.html#gin-epoxy">Gin & Epoxy</a></li>
                     </ul>
                 </li>
