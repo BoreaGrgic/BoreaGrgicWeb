@@ -171,10 +171,13 @@ nav {
       color: var(--accent-gold) !important;
     }
 
-.nav-links li:hover .dropdown-menu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateX(-50%) translateY(0);
+/* Hover efekt za dropdown se aktivira SAMO na računalima s mišem */
+@media (hover: hover) {
+  .nav-links li:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+  }
 }
 
 /* Mobilni hamburger */
