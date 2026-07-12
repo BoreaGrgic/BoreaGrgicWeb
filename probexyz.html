@@ -130,14 +130,12 @@
         settings: {
           displayMode: 'overlay',
           theme: 'light',
-          locale: 'en',
-          variant: 'one-page',
-          // Ručno prosljeđujemo ime kako bismo zaobišli prazno polje u Dashboardu:
-          businessName: 'Borea Grgić'
+          locale: 'en'
         },
-        items: [
+        // Paddle v2 klijentski format zahtijeva lineItems:
+        lineItems: [
           {
-            priceId: 'pri_01kxanyzxw134xxjx4spzt3n0g', // Tvoj ID cijene
+            priceId: 'pri_01kx9e005vss58j1sdgawnpxf9', // Tvoj ID cijene
             quantity: 1
           }
         ]
