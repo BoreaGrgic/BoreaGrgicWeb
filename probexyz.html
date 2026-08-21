@@ -1,4 +1,6 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-9T2H0MJBL7"></script>
   <script>
@@ -12,16 +14,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BOREA GRGIĆ | Probe XYZ UCCNC Plugin</title>
   <link rel="stylesheet" href="css/style.css">
-
-  <!-- 1. UKLJUČIVANJE SLUŽBENE PADDLE JS SKRIPTE -->
-  <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
-  <script>
-    Paddle.Environment.set("sandbox");
-
-    Paddle.Initialize({
-      token: "test_593f9264a4b5dd9e12a8d74bb80"
-    });
-  </script></head><body>
+</head>
+<body>
 
   <main>
     <div class="page-header">
@@ -76,7 +70,7 @@
           <li style="margin-bottom: 5px;">Seamless mapping to custom macros and hardware buttons for streamlined operation.</li>
         </ul>
 
-        <!-- NOVO: Upute za slanje serijskog broja kontrolera (Strelice 1 i 2) -->
+        <!-- Upute za slanje serijskog broja kontrolera -->
         <div class="serial-instructions" style="margin-bottom: 25px; padding: 15px; border-left: 4px solid #D1B48C; background: rgba(0,0,0,0.01);">
           <h4 style="margin: 0 0 8px 0; color: #001122;">How to obtain your lifetime license:</h4>
           <p style="margin: 0 0 12px 0; font-size: 0.9rem; line-height: 1.4; color: #333;">
@@ -88,20 +82,19 @@
         <!-- Kartica za Download i Kupnju -->
         <div class="checkout-card" style="background: rgba(0,0,0,0.03); padding: 25px; border-radius: 8px; border: 1px solid rgba(0,0,0,0.08);">
 
-          <!-- Popravljena cijena -->
+          <!-- Prikaz cijene -->
           <div class="price-tag" style="font-size: 1.5rem; font-weight: bold; margin: 0 0 5px 0; color: #D1B48C;">
             29.00 EUR
           </div>
-          <!-- Vraćeno: Prikaz s uključenim porezom -->
           <div style="font-size: 0.8rem; color: #666; margin-bottom: 5px;">
             (VAT included)
           </div>
-          
+
           <div class="btn-stack" style="display: flex; flex-direction: column; gap: 10px;">
-            <!-- Gumb za Paddle -->
-            <button class="btn btn-solid" onclick="otvoriPaddleSustav()" style="width: 100%; padding: 12px; font-weight: bold; cursor: pointer;">
+            <!-- Pravi Creem Checkout gumb -->
+            <a href="https://www.creem.io/payment/prod_5b5Il3Pa2Wk8McyzGVkNeC" target="_blank" class="btn btn-solid" style="display: block; text-align: center; text-decoration: none; width: 100%; padding: 12px; font-weight: bold; box-sizing: border-box;">
               Buy License
-            </button>
+            </a>
             <!-- E-mail podrške unutar narudžbene kartice -->
             <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(0,0,0,0.08); font-size: 0.85rem; color: #444; text-align: center;">
               Need help? Contact support: <a href="mailto:drago.grgic3@gmail.com" style="color: #001122; font-weight: bold; text-decoration: underline;">drago.grgic3@gmail.com</a>
@@ -143,12 +136,9 @@
       document.getElementById('main-software-img').src = imageSrc;
     }
   </script>
-    5
+
   <!-- Učitavanje vanjskih skripti -->
   <script src="js/main.js"></script>
   <script src="js/navigacija.js"></script>
-  <script>
-    function otvoriPaddleSustav() {
-      alert("Automated payment checkout is currently in the testing phase and will be available soon.\n\nIn the meantime, you can download the fully functional software and use it for 30 days free of charge.\n\nIf you wish to purchase a permanent license right away, please contact us via our contact form.");
-    }
-  </script></body></html>
+</body>
+</html>
