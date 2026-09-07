@@ -15,8 +15,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 <li>
                     <a href="wood-epoxy.html">Wood & Epoxy</a>
                     <ul class="dropdown-menu">
-                        <li><a href="wood-epoxy.html">Hungry Hearts</a></li>
+                        <li><a href="wood-epoxy.html#hungryhearts">Hungry Hearts</a></li>
                         <li><a href="wood-epoxy.html#gin-epoxy">Gin & Epoxy</a></li>
+                        <li><a href="wood-epoxy.html#coat-of-arms-dalmatia">Coat of Arms</a></li>
+                        <li><a href="wood-epoxy.html#ice-river">Ice River</a></li>
                     </ul>
                 </li>
                 <li>
@@ -27,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 </li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <!-- NOVO: YouTube link sa SVG ikonom unutar navigacije -->
+                <!-- YouTube link sa SVG ikonom unutar navigacije -->
                 <li style="display: inline-flex; align-items: center;">
                     <a href="https://www.youtube.com/@Borea_Grgic" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 6px;">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="#ff0000" style="vertical-align: middle;">
