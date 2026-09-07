@@ -32,7 +32,7 @@
         </a>
       </div>
     </div>
-    
+
     <!-- 1. PROIZVOD: HUNGRY HEARTS -->
     <section id="hungryhearts" style="padding: 60px 0; border-bottom: 1px solid rgba(0,0,0,0.1);">
       <div class="software-layout">
@@ -74,7 +74,7 @@
     </section>
 
     <!-- 2. PROIZVOD: GIN & EPOXY -->
-    <section id="gin-epoxy" style="padding: 60px 0;">
+    <section id="gin-epoxy" style="padding: 60px 0; border-bottom: 1px solid rgba(0,0,0,0.1);">
       <div class="software-layout">
 
         <!-- LIJEVI STUPAC: Galerija za Gin & Epoxy -->
@@ -112,6 +112,86 @@
 
       </div>
     </section>
+
+    <!-- 3. PROIZVOD: COAT OF ARMS OF DALMATIA -->
+    <section id="coat-of-arms-dalmatia" style="padding: 60px 0; border-bottom: 1px solid rgba(0,0,0,0.1);">
+      <div class="software-layout">
+
+        <!-- LIJEVI STUPAC: Galerija za Coat of Arms -->
+        <div class="gallery-holder">
+          <div class="main-view">
+            <img id="main-coat-img" src="assets/images/CoatOfArmsDalmatia/Coat_of_arms_flowers.jpg" alt="Coat of Arms of Dalmatia Wall Art">
+          </div>
+          <div class="thumbs-holder">
+            <div class="thumb-box" onclick="changeCoatImage('assets/images/CoatOfArmsDalmatia/Coat_of_arms_flowers.jpg')">
+              <img src="assets/images/CoatOfArmsDalmatia/Coat_of_arms_flowers.jpg" alt="Coat of Arms Flowers">
+            </div>
+            <div class="thumb-box" onclick="changeCoatImage('assets/images/CoatOfArmsDalmatia/Coat_of_arms_wall.jpg')">
+              <img src="assets/images/CoatOfArmsDalmatia/Coat_of_arms_wall.jpg" alt="Coat of Arms Wall View">
+            </div>
+            <div class="thumb-box" onclick="changeCoatImage('assets/images/CoatOfArmsDalmatia/Natpis_Grb.png')">
+              <img src="assets/images/CoatOfArmsDalmatia/Natpis_Grb.png" alt="Natpis Grb Detail">
+            </div>
+          </div>
+        </div>
+
+        <!-- DESNI STUPAC: Opis proizvoda -->
+        <div class="software-details">
+          <span style="font-size: 0.8rem; background: rgba(0, 0, 0, 0.05); padding: 4px 10px; border-radius:4px; font-weight:700;">WALL ART / RELIEF</span>
+          <h2 style="margin: 10px 0 20px 0; color: #001122;">"Coat of Arms of Dalmatia"</h2>
+          <p style="margin-bottom: 20px;">
+            Intricately carved high-relief wall art honoring historic heritage. Precision CNC routed and hand-finished to highlight fine architectural details and depth in solid hardwood.
+          </p>
+          <h4 style="margin-bottom: 10px;">Product Highlights:</h4>
+          <ul style="margin-bottom: 30px; padding-left: 20px; list-style-type: square;">
+            <li style="margin-bottom: 5px;">Deep 3D carved heraldic lions with sharp, hand-sanded detail.</li>
+            <li style="margin-bottom: 5px;">Rich protective oil coat enhancing natural hardwood grain.</li>
+            <li style="margin-bottom: 5px;">Statement wall decoration designed for timeless interior display.</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 4. PROIZVOD: ICE RIVER -->
+    <section id="ice-river" style="padding: 60px 0;">
+      <div class="software-layout">
+
+        <!-- LIJEVI STUPAC: Galerija za Ice River -->
+        <div class="gallery-holder">
+          <div class="main-view">
+            <img id="main-ice-img" src="assets/images/IceRiver/IceRiver_table_1.jpg" alt="Ice River Coffee Table">
+          </div>
+          <div class="thumbs-holder">
+            <div class="thumb-box" onclick="changeIceImage('assets/images/IceRiver/IceRiver_table_1.jpg')">
+              <img src="assets/images/IceRiver/IceRiver_table_1.jpg" alt="Ice River 1">
+            </div>
+            <div class="thumb-box" onclick="changeIceImage('assets/images/IceRiver/IceRiver_table_2.jpg')">
+              <img src="assets/images/IceRiver/IceRiver_table_2.jpg" alt="Ice River 2">
+            </div>
+            <div class="thumb-box" onclick="changeIceImage('assets/images/IceRiver/IceRiver_table_3.jpg')">
+              <img src="assets/images/IceRiver/IceRiver_table_3.jpg" alt="Ice River 3">
+            </div>
+          </div>
+        </div>
+
+        <!-- DESNI STUPAC: Opis proizvoda -->
+        <div class="software-details">
+          <span style="font-size: 0.8rem; background: rgba(0, 0, 0, 0.05); padding: 4px 10px; border-radius:4px; font-weight:700;">COFFEE TABLE</span>
+          <h2 style="margin: 10px 0 20px 0; color: #001122;">"Ice River"</h2>
+          <p style="margin-bottom: 20px;">
+            A striking centerpiece featuring icy, semi-translucent epoxy streams flowing through live-edge timber. Formed to mimic glacial riverbeds with smooth curves and a glass-like top layer.
+          </p>
+          <h4 style="margin-bottom: 10px;">Product Highlights:</h4>
+          <ul style="margin-bottom: 30px; padding-left: 20px; list-style-type: square;">
+            <li style="margin-bottom: 5px;">Glacial blue-white metallic tint poured between raw live edges.</li>
+            <li style="margin-bottom: 5px;">Satin smooth protective finish engineered against daily wear.</li>
+            <li style="margin-bottom: 5px;">Organic contours paired with modern minimalist support base.</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
   </main>
 
   <footer class="footer-legal">
@@ -130,6 +210,12 @@
     }
     function changeGinImage(imageSrc) {
       document.getElementById('main-gin-img').src = imageSrc;
+    }
+    function changeCoatImage(imageSrc) {
+      document.getElementById('main-coat-img').src = imageSrc;
+    }
+    function changeIceImage(imageSrc) {
+      document.getElementById('main-ice-img').src = imageSrc;
     }
   </script>
 
